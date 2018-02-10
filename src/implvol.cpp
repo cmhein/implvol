@@ -17,31 +17,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 #include <Rcpp.h>
 
-#include "implvol.h"
+#include "lets_be_rational.h"
 
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-Rcpp::DataFrame implvol(int n,
-                        double x0,
-                        double y0,
-                        double a,
-                        double b,
-                        double c,
-                        double d)
+double implvol(double price,
+               double F,
+               double K,
+               double T,
+               double q)
 {
-  if (n < 1)
-  {
-    // return empty dataframe
-  }
-
-  NumericVector x(n);
-  NumericVector y(n);
-
-  if (0 != implvol(n, x0, y0, a, b, c, d, &x[0], &y[0]))
-  {
-    // return empty dataframe
-  }
-
-  return DataFrame::create(_["x"]= x, _["y"]= y);
+  return implied_volatility_from_a_transformed_rational_guess(price, F, K, T, q);
 }
