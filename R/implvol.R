@@ -1,5 +1,5 @@
 #' @export
-implvol <- function(n, x0, y0, a, b, c, d)
+implvol <- function(price, F, K, T, q)
 {
-  implvol(n, x0, y0, a, b, c, d)
+  implvol(price, F, K, T, q)
 }
