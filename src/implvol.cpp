@@ -21,12 +21,32 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 using namespace Rcpp;
 
+/**
+ * Peter Jaeckel's implementation of "Let's Be Rational"
+ *
+ * Implies Black's volatility from option price with as little as two
+ * iterations to maximum attainable precision on standard (64 bit floating
+ * point) hardware for all possible inputs.
+ *
+ * Ref: http://www.jaeckel.org/
+ *
+ * @param[in] price   Price of option
+ * @param[in] forward Forward of spot price of underlying
+ * @param[in] strike  Strike
+ * @param[in] time    Time to expiry in fraction of year
+ * @param[in] call    Call option if TRUE; put option if FALSE
+ * @return            Implied volatility
+ */
 // [[Rcpp::export]]
-double implvol(double price,
-               double F,
-               double K,
-               double T,
-               double q)
+double jaeckel(double price,
+               double forward,
+               double strike,
+               double time,
+               bool   call)
 {
-  return implied_volatility_from_a_transformed_rational_guess(price, F, K, T, q);
+  return implied_volatility_from_a_transformed_rational_guess(price,
+                                                              forward,
+                                                              strike,
+                                                              time,
+                                                              (call ? 1.0 : -1.0));
 }

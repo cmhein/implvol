@@ -5,24 +5,24 @@
 
 using namespace Rcpp;
 
-// implvol
-double implvol(double price, double F, double K, double T, double q);
-RcppExport SEXP _implvol_implvol(SEXP priceSEXP, SEXP FSEXP, SEXP KSEXP, SEXP TSEXP, SEXP qSEXP) {
+// jaeckel
+double jaeckel(double price, double forward, double strike, double time, bool call);
+RcppExport SEXP _implvol_jaeckel(SEXP priceSEXP, SEXP forwardSEXP, SEXP strikeSEXP, SEXP timeSEXP, SEXP callSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< double >::type price(priceSEXP);
-    Rcpp::traits::input_parameter< double >::type F(FSEXP);
-    Rcpp::traits::input_parameter< double >::type K(KSEXP);
-    Rcpp::traits::input_parameter< double >::type T(TSEXP);
-    Rcpp::traits::input_parameter< double >::type q(qSEXP);
-    rcpp_result_gen = Rcpp::wrap(implvol(price, F, K, T, q));
+    Rcpp::traits::input_parameter< double >::type forward(forwardSEXP);
+    Rcpp::traits::input_parameter< double >::type strike(strikeSEXP);
+    Rcpp::traits::input_parameter< double >::type time(timeSEXP);
+    Rcpp::traits::input_parameter< bool >::type call(callSEXP);
+    rcpp_result_gen = Rcpp::wrap(jaeckel(price, forward, strike, time, call));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_implvol_implvol", (DL_FUNC) &_implvol_implvol, 5},
+    {"_implvol_jaeckel", (DL_FUNC) &_implvol_jaeckel, 5},
     {NULL, NULL, 0}
 };
 
