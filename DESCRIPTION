@@ -10,7 +10,7 @@ Description: Computes option implied volatility using Peter Jaeckel's
 Depends:
     R (>= 3.0.0)
 Imports:
-    Rcpp (>= 0.12.13)
+    Rcpp
 LinkingTo:
     Rcpp
 License: AGPL-3
