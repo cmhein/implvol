@@ -3,7 +3,7 @@ Version: 0.1.0
 Title: Option Implied Volatility
 Authors@R: c(
     person("Chris", "Hein", role = c("aut", "cre"),
-           email = "cmhein.git@gmail.com")
+           email = "cmhein00@gmail.com")
     )
 Description: Computes option implied volatility using Peter Jaeckel's
     implementation of "Let's Be Rational".
@@ -16,5 +16,5 @@ LinkingTo:
 License: AGPL-3
 NeedsCompilation: yes
 LazyData: true
-URL: https://github.com/cmhein/implvol
-BugReports: https://github.com/cmhein/implvol/issues
+URL: https://gitlab.com/cmhein/implvol
+BugReports: https://gitlab.com/cmhein/implvol/issues
