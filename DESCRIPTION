@@ -16,5 +16,6 @@ LinkingTo:
 License: AGPL-3
 NeedsCompilation: yes
 LazyData: true
-URL: https://gitlab.com/cmhein/implvol
-BugReports: https://gitlab.com/cmhein/implvol/issues
+URL: https://github.com/cmhein/implvol
+BugReports: https://github.com/cmhein/implvol/issues
+RoxygenNote: 6.0.1

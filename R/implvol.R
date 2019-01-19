@@ -1,5 +1,17 @@
+#' implvol: option implied volatility
+#' 
+#' implvol computes option implied volatilities using Peter Jaeckel's
+#' implementation of "Let's Be Rational".
+#' 
+#' @author Chris Hein <cmhein00@gmail.com>
+#' @importFrom Rcpp sourceCpp
+#' @useDynLib implvol
+#' @docType package
+#' @name implvol
+NULL 
+
 #' @export
-implvol <- function(n, x0, y0, a, b, c, d)
+implvol <- function(price, forward, strike, time, call)
 {
-  implvol(n, x0, y0, a, b, c, d)
+  jaeckel(price, forward, strike, time, call)
 }
