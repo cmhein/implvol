@@ -1,6 +1,12 @@
-# Option Implied Volatility
+# Implied Volatility of Options
 
 The implvol package computes option implied volatilities using [Peter Jaeckel](http://www.jaeckel.org/)'s implementation of "Let's Be Rational" ([reference source code](https://jaeckel.000webhostapp.com/LetsBeRational.7z)).
+
+Install the implvol package from GitHub with:
+
+``` r
+devtools::install_github("cmhein/implvol")
+```
 
 According to Jaeckel's ["Let's Be Rational"](https://jaeckel.000webhostapp.com/LetsBeRational.pdf), the algorithm implies Black's volatility from option price with as little as two iterations to maximum attainable precision on standard (64 bit floating point) hardware for all possible inputs.
 
