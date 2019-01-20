@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2018 Chris Hein <https://github.com/cmhein>
+Copyright (C) 2019 Chris Hein <https://github.com/cmhein>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
@@ -33,8 +33,8 @@ using namespace Rcpp;
  * @param[in] price   Price of option
  * @param[in] forward Forward of spot price of underlying
  * @param[in] strike  Strike
- * @param[in] time    Time to expiry in fraction of year
- * @param[in] call    Call option if TRUE; put option if FALSE
+ * @param[in] time    Time to expiry in years
+ * @param[in] call    Call option if true; put option if false
  * @return            Implied volatility
  */
 // [[Rcpp::export]]
@@ -44,9 +44,10 @@ double jaeckel(double price,
                double time,
                bool   call)
 {
-  return implied_volatility_from_a_transformed_rational_guess(price,
-                                                              forward,
-                                                              strike,
-                                                              time,
-                                                              (call ? 1.0 : -1.0));
+  return implied_volatility_from_a_transformed_rational_guess(
+    price,
+    forward,
+    strike,
+    time,
+    (call ? 1.0 : -1.0));
 }
