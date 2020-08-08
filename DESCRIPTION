@@ -3,7 +3,7 @@ Version: 0.1.0
 Title: Option Implied Volatility
 Authors@R: c(
     person("Chris", "Hein", role = c("aut", "cre"),
-           email = "cmhein00@gmail.com"),
+           email = "chris.hein@cmhe.in"),
     person("Peter", "Jaeckel", role = "aut")
     )
 Description: Computes option implied volatility using Peter Jaeckel's
